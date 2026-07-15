@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing Page Kit - Template moderno e profissional para landing pages">
+  <title>Landing Page Kit</title>
+
+  <!-- Google Fonts - Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="min-h-screen bg-white">
+
+  <!-- Header -->
+  <header class="bg-rose-900">
+    <div class="container">
+      <nav class="flex items-center justify-between py-2">
+        <!-- Logo -->
+        <a href="/" class="text-h5 text-white">xinder</a>
+
+        <!-- Hamburger Menu Button -->
+        <button type="button" aria-label="Abrir menu" aria-expanded="false" class="text-white">
+          <img src="./src/assets/icons/menu-scale.svg" alt="Menu icon">
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="bg-rose-900 pt-[29px] gap-4 overflow-hidden">
+      <div class="container">
+        <div class="flex flex-col gap-4">
+          <!-- Coluna Esquerda: Texto + Search + Badges -->
+          <div class="flex flex-col gap-3 items-start shrink-0">
+            <h1 class="text-h4 text-white">Search the work of the best artists</h1>
+
+            <div class="flex flex-col gap-1 w-full max-w-xl">
+              <!-- Container Flex: setamos a altura (h-[3rem] equivalente a 48px) aqui para garantir altura em ambos -->
+              <div class="flex flex-row items-stretch gap-2 h-[3rem] w-full">
+
+                <!-- Campo Field Original (base 14.75rem = 236px, mas estica com flex-auto) -->
+                <div class="form-field flex-auto w-[14.75rem] min-w-0 cursor-text"
+                  onclick="this.querySelector('input').focus()">
+                  <!-- Ícone Inline de Search -->
+                  <svg class="text-blue-gray-400 shrink-0 hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.5 16.5C11.2879 16.5 12.0681 16.3448 12.7961 16.0433C13.5241 15.7418 14.1855 15.2998 14.7426 14.7427C15.2998 14.1855 15.7417 13.5241 16.0433 12.7961C16.3448 12.0682 16.5 11.2879 16.5 10.5C16.5 9.71208 16.3448 8.93187 16.0433 8.20391C15.7417 7.47596 15.2998 6.81453 14.7426 6.25737C14.1855 5.70022 13.5241 5.25827 12.7961 4.95674C12.0681 4.65521 11.2879 4.50002 10.5 4.50002C8.9087 4.50002 7.38258 5.13216 6.25736 6.25737C5.13214 7.38259 4.5 8.90872 4.5 10.5C4.5 12.0913 5.13214 13.6174 6.25736 14.7427C7.38258 15.8679 8.9087 16.5 10.5 16.5ZM16.82 15.406L20.4 18.986C20.4954 19.0783 20.5715 19.1887 20.6239 19.3108C20.6762 19.4328 20.7037 19.564 20.7047 19.6968C20.7058 19.8296 20.6804 19.9613 20.63 20.0841C20.5797 20.207 20.5053 20.3186 20.4114 20.4124C20.3174 20.5062 20.2057 20.5804 20.0828 20.6306C19.9599 20.6808 19.8282 20.706 19.6954 20.7048C19.5626 20.7035 19.4314 20.6758 19.3094 20.6233C19.1875 20.5708 19.0772 20.4946 18.985 20.399L15.405 16.819C13.7975 18.0669 11.7748 18.6552 9.74875 18.4642C7.72271 18.2732 5.8456 17.3173 4.49955 15.7911C3.1535 14.2648 2.43968 12.283 2.50343 10.2489C2.56717 8.21492 3.40367 6.28164 4.84265 4.84266C6.28162 3.40368 8.2149 2.56718 10.2489 2.50344C12.2829 2.4397 14.2648 3.15351 15.7911 4.49957C17.3173 5.84562 18.2732 7.72273 18.4642 9.74877C18.6552 11.7748 18.0668 13.7975 16.819 15.405L16.82 15.406Z"
+                      fill="currentColor" />
+                  </svg>
+                  <!-- Input Transparente -->
+                  <input type="text" placeholder="search for artists, work name, or category"
+                    class="flex-1 min-w-0 bg-transparent border-none outline-none truncate text-blue-gray-900 placeholder:text-blue-gray-400">
+                </div>
+
+                <!-- Botão Search (w-[6.8125rem] = 109px) -->
+                <button
+                  class="btn-filled btn-md text-button-md flex-none w-[6.8125rem] bg-rose-700 border-rose-700 hover:bg-rose-800 hover:border-rose-800 ">
+                  Search
+                </button>
+
+              </div>
+              <!-- Container das Badges com Scroll Horizontal (Bleed Full para indicar rolagem) -->
+              <ul id="badges" aria-label="Art categories"
+                class="flex flex-row items-center gap-1 h-3 overflow-x-auto scrollbar-hide -mx-2 px-2">
+                <li
+                  class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
+                  Oil Painting</li>
+                <li
+                  class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
+                  Abstract Art</li>
+                <li
+                  class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
+                  Sculpture</li>
+                <li
+                  class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
+                  Art Deco</li>
+                <li
+                  class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
+                  Pop Art</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Imagem da Artista -->
+          <div class="relative shrink-0 self-center">
+            <img src="./src/assets/images/woman-trace.png" alt="" aria-hidden="true"
+              class="absolute top-[5px] left-[16px] w-[331px] h-[285px]">
+            <img src="./src/assets/images/woman.png" alt="Artist painting" class="relative w-[345px] h-[291px]">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands">
+      <div class="container flex flex-row flex-wrap gap-y-3 gap-x-4 py-6 justify-center">
+
+        <div class="flex flex-row gap-1 items-center">
+          <img src="/src/assets/logos/smart-finder-logo.svg" alt="Smart Finder Brand Logo">
+          <span class="text-h6 text-blue-gray-400">SmartFinder</span>
+        </div>
+
+        <div class="flex flex-row gap-1 items-center">
+          <img src="/src/assets/logos/zoomerr-logo.svg" alt="Zoomer Brand Logo">
+          <span class="text-h6 text-blue-gray-400">Zoomerr</span>
+        </div>
+
+        <div class="flex flex-row gap-1 items-center">
+          <img src="/src/assets/logos/shells-logo.svg" alt="Shells Brand Logo">
+          <span class="text-h6 text-blue-gray-400 uppercase">Shells</span>
+        </div>
+
+        <div class="flex flex-row gap-1 items-center">
+          <img src="/src/assets/logos/waves-logo.svg" alt="Waves Brand Logo">
+          <span class="text-h6 text-blue-gray-400 uppercase">Waves</span>
+        </div>
+
+        <div class="flex flex-row gap-1 items-center">
+          <img src="/src/assets/logos/art-venue-logo.svg" alt="Art Venue Brand Logo">
+          <span class="text-h6 text-blue-gray-400">Art Venue</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Featured Artworks Section -->
+    <section id="featured-artworks" class="py-6">
+      <div class="container flex flex-col gap-6">
+        <!-- Header da Seção: Coluna no celular, Linha no tablet/desktop -->
+        <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
+          <h2 class="text-h5 text-blue-gray-900">Featured art categories</h2>
+
+          <a href="#"
+            class="inline-flex py-1.5 items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
+            View All Categories
+            <img src="/src/assets/icons/arrow-right.svg" alt="arrow right icon" class="size-" />
+          </a>
+        </div>
+
+        <!-- O Carrossel de Cards entrará aqui -->
+        <ul id="art-categories-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 h-[354px] overflow-x-auto scrollbar-hide -mx-4 px-4">
+
+          <!-- CARD 1 -->
+          <li
+            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            <!-- Imagem preenchendo o card inteiro -->
+            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+              class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Caixa para o texto ficar por cima da imagem -->
+            <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
+              <!-- O texto vai aqui dentro! -->
+              <span class="text-subtitle-md text-white">Pottery</span>
+              <h3 class="text-h6 text-white ">Vases Family</h3>
+            </div>
+          </li>
+
+
+          <!-- CARD 2 -->
+          <li
+            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            <!-- Imagem preenchendo o card inteiro -->
+            <img src="/src/assets/images/card-image2.png" alt="Oil Painting"
+              class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Caixa para o texto ficar por cima da imagem -->
+            <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
+              <!-- O texto vai aqui dentro! -->
+              <span class="text-subtitle-md text-white">Oil Painting</span>
+              <h3 class="text-h6 text-white ">Camel Portrait</h3>
+            </div>
+          </li>
+
+
+          <!-- CARD 3 -->
+          <li
+            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            <!-- Imagem preenchendo o card inteiro -->
+            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+              class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Caixa para o texto ficar por cima da imagem -->
+            <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
+              <!-- O texto vai aqui dentro! -->
+              <span class="text-subtitle-md text-white">Pottery</span>
+              <h3 class="text-h6 text-white ">Vases Family</h3>
+            </div>
+          </li>
+
+
+          <!-- CARD 4 -->
+          <li
+            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            <!-- Imagem preenchendo o card inteiro -->
+            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+              class="absolute inset-0 w-full h-full object-cover">
+
+            <!-- Caixa para o texto ficar por cima da imagem -->
+            <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
+              <!-- O texto vai aqui dentro! -->
+              <span class="text-subtitle-md text-white">Pottery</span>
+              <h3 class="text-h6 text-white ">Vases Family</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>
