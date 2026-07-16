@@ -14,11 +14,10 @@
     rel="stylesheet">
 
   <!-- Compiled Tailwind CSS -->
-  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 
-<body class="min-h-screen bg-white">
-
+<body class="min-h-screen bg-white overflow-x-hidden">
   <!-- Header -->
   <header class="bg-rose-900">
     <div class="container">
@@ -72,7 +71,7 @@
               </div>
               <!-- Container das Badges com Scroll Horizontal (Bleed Full para indicar rolagem) -->
               <ul id="badges" aria-label="Art categories"
-                class="flex flex-row items-center gap-1 h-3 overflow-x-auto scrollbar-hide -mx-2 px-2">
+                class="flex flex-row items-center gap-1 h-3 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
                 <li
                   class="inline-flex h-full items-center justify-center rounded-[4px] border border-white text-white text-body-sm px-[8px] shrink-0 cursor-default">
                   Oil Painting</li>
@@ -103,8 +102,10 @@
       </div>
     </section>
 
+
+
     <!-- Brands Section -->
-    <section id="brands">
+    <section id="brands" class="bg-blue-gray-100">
       <div class="container flex flex-row flex-wrap gap-y-3 gap-x-4 py-6 justify-center">
 
         <div class="flex flex-row gap-1 items-center">
@@ -136,15 +137,16 @@
     </section>
 
 
+
     <!-- Featured Artworks Section -->
     <section id="featured-artworks" class="py-6">
-      <div class="container flex flex-col gap-6">
+      <div class="container flex flex-col gap-4">
         <!-- Header da Seção: Coluna no celular, Linha no tablet/desktop -->
         <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
           <h2 class="text-h5 text-blue-gray-900">Featured art categories</h2>
 
           <a href="#"
-            class="inline-flex py-1.5 items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
+            class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
             View All Categories
             <img src="/src/assets/icons/arrow-right.svg" alt="arrow right icon" class="size-" />
           </a>
@@ -152,15 +154,14 @@
 
         <!-- O Carrossel de Cards entrará aqui -->
         <ul id="art-categories-carousel" aria-label="Art categories"
-          class="flex flex-row items-center gap-3 h-[354px] overflow-x-auto scrollbar-hide -mx-4 px-4">
+          class="flex flex-row items-center gap-3 py-4 -my-4 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
 
           <!-- CARD 1 -->
           <li
-            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
             <img src="/src/assets/images/card-image1.png" alt="Vases Family"
               class="absolute inset-0 w-full h-full object-cover">
-
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
               <!-- O texto vai aqui dentro! -->
@@ -172,11 +173,10 @@
 
           <!-- CARD 2 -->
           <li
-            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
             <img src="/src/assets/images/card-image2.png" alt="Oil Painting"
               class="absolute inset-0 w-full h-full object-cover">
-
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
               <!-- O texto vai aqui dentro! -->
@@ -188,40 +188,195 @@
 
           <!-- CARD 3 -->
           <li
-            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+            <img src="/src/assets/images/card-image3.png" alt="Abstract Painting"
               class="absolute inset-0 w-full h-full object-cover">
-
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
               <!-- O texto vai aqui dentro! -->
-              <span class="text-subtitle-md text-white">Pottery</span>
-              <h3 class="text-h6 text-white ">Vases Family</h3>
+              <span class="text-subtitle-md text-white">Abstract Painting</span>
+              <h3 class="text-h6 text-white ">Euforia</h3>
             </div>
           </li>
 
 
           <!-- CARD 4 -->
           <li
-            class="relative shrink-0 border border-blue-gray-200 rounded overflow-hidden h-full w-[236.8px] min-w-[236.8px]">
+            class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+            <img src="/src/assets/images/card-image4.png" alt="Classic Watch"
               class="absolute inset-0 w-full h-full object-cover">
-
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
               <!-- O texto vai aqui dentro! -->
-              <span class="text-subtitle-md text-white">Pottery</span>
-              <h3 class="text-h6 text-white ">Vases Family</h3>
+              <span class="text-subtitle-md text-white">Object Design</span>
+              <h3 class="text-h6 text-white ">Classic Watch</h3>
+            </div>
+          </li>
+
+
+          <!-- CARD 5 -->
+          <li
+            class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
+            <!-- Imagem preenchendo o card inteiro -->
+            <img src="/src/assets/images/card-image5.png" alt="Sculpture White Angel"
+              class="absolute inset-0 w-full h-full object-cover">
+            <!-- Caixa para o texto ficar por cima da imagem -->
+            <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
+              <!-- O texto vai aqui dentro! -->
+              <span class="text-subtitle-md text-white">Sculpture</span>
+              <h3 class="text-h6 text-white ">White Angel</h3>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="cta">
+
+
+    <!-- Latest marterpieces -->
+    <section id="masterpieces" class="py-6 bg-blue-gray-100">
+      <div class="container flex flex-col gap-3">
+        <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
+          <h2 class="text-h5 text-blue-gray-900">Latest Masterpieces</h2>
+
+          <a href="#"
+            class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
+            Discover More Masterpieces
+            <img src="/src/assets/icons/arrow-right.svg" alt="arrow right icon" class="size-" />
+          </a>
+        </div>
+        <ul id="art-categories-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 py-4 -my-4 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
+          <!-- CARD 1 -->
+          <li
+            class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
+            <img src="/src/assets/images/flower-decoration.png" alt="Flowers decoration">
+            <div class="flex flex-row p-2 gap-1">
+              <img src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <div class="flex flex-col items-start justify-center">
+                <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
+                <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
+              </div>
+            </div>
+            <div class="absolute z-10 top-2 px-1 py-[2px] left-2 rounded-[4px] bg-blue-gray-100">
+              <span class="text-body-sm text-warm-gray-800">Promoted</span>
+            </div>
+          </li>
+
+          <!-- CARD 2 -->
+          <li
+            class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
+            <img src="/src/assets/images/flower-decoration2.png" alt="Flowers decoration">
+            <div class="flex flex-row p-2 gap-1">
+              <img src="/src/assets/images/user-thumb2.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <div class="flex flex-col items-start justify-center">
+                <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
+                <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
+              </div>
+            </div>
+            <div class="absolute z-10 top-2 px-1 py-[2px] left-2 rounded-[4px] bg-purple-100">
+              <span class="text-body-sm text-purple-800">Featured</span>
+            </div>
+          </li>
+
+          <!-- CARD 3 -->
+          <li
+            class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
+            <img src="/src/assets/images/splash.png" alt="Splash Art">
+            <div class="flex flex-row p-2 gap-1">
+              <img src="/src/assets/images/user-thumb3.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <div class="flex flex-col items-start justify-center">
+                <h3 class="text-body-md text-blue-gray-900">Splash</h3>
+                <span class="text-body-sm text-blue-gray-600">by Rwanda Melflor</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 4 -->
+          <li
+            class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
+            <img src="/src/assets/images/fence-spying.png" alt="Fence Spying">
+            <div class="flex flex-row p-2 gap-1">
+              <img src="/src/assets/images/user-thumb5.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <div class="flex flex-col items-start justify-center">
+                <h3 class="text-body-md text-blue-gray-900">Fence Spying</h3>
+                <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- CARD 5 -->
+
+        </ul>
+      </div>
+    </section>
+
+
+
+    <section id="expanding-services" class="py-6 bg-white">
+      <div class="container flex flex-col gap-6 justify-center items-center">
+        <h2 class="text-h5 text-blue-gray-900">Expanding services</h2>
+        <div class="grid grid-cols-3 lg:grid-cols-6 gap-x-3 gap-y-6 w-full">
+
+          <div id="service-card-1" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-1.svg" alt="Trophy Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Nibh viverra</h3>
+          </div>
+
+          <div id="service-card-2" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-2.svg" alt="Music Note Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Cursus amet</h3>
+          </div>
+
+          <div id="service-card-3" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-3.svg" alt="TV Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Ipsum fermentum</h3>
+          </div>
+
+          <div id="service-card-4" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-4.svg" alt="Decoration Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Quisque euismod</h3>
+          </div>
+
+          <div id="service-card-5" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-5.svg" alt="Speaker Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Arcu vulputate</h3>
+          </div>
+
+          <div id="service-card-6" class="flex flex-col gap-2 justify-center items-center">
+            <img src="/src/assets/icons/feature-icon-6.svg" alt="Saved Artwork Icon" class="w-8 h-auto">
+            <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Cras auctor</h3>
+          </div>
+        </div>
+        <a href="#"
+          class="inline-flex justify-center items-center py-2 px-4 bg-rose-700 hover:bg-rose-800 text-white text-button-lg rounded-[5px] transition-colors">
+          Find Services
+        </a>
+      </div>
+    </section>
+
+
+
+    <section id="best-solutions" class="py-6 bg-blue-gray-600">
+      <div class="container flex flex-col gap-4">
+        <div class="flex">
+          <div id="screen-desktop" class="relative flex rounded-[20px] overflow-hidden justify-center items-center">
+            <div
+              class="absolute z-10 w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-overlay-dark-50 rounded-full flex justify-center items-center">
+              <img src="/src/assets/icons/play-icon.svg" alt="Play Icon">
+            </div>
+            <img src="/src/assets/images/video-image-background.png" alt="Desktop Screen">
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
     </section>
   </main>
 

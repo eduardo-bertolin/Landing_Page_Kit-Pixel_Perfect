@@ -173,6 +173,11 @@
      COLORS
      ---------------------------------------- */
 
+  /* --- Overlays --- */
+  --color-overlay-dark-75: rgba(18, 22, 25, 0.75);
+  --color-overlay-dark-50: rgba(18, 22, 25, 0.50);
+  --color-overlay-dark-25: rgba(18, 22, 25, 0.25);
+
   /* --- Blue Gray --- */
   --color-blue-gray-50: #f8fafc;
   --color-blue-gray-100: #f1f5f9;

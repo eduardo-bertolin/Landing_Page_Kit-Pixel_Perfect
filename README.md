@@ -6,7 +6,7 @@ The development focuses on extreme visual fidelity to the original design, adopt
 
 ## Original Design (Figma)
 The layout and prototype that serve as the foundation for this project can be accessed here:
-[Landing Page Kit - Free 13 Landing Pages Collection](https://www.figma.com/design/gCh9o5aU6agAjgLLxLH9sk/Landing-Page-Kit---Free-13-Landing-Pages-Collection-for-UI-UX-Design--Community---Copy-?node-id=361-34455&m=dev)
+[Landing Page Kit - Free 13 Landing Pages Collection](https://www.figma.com/design/r68KqMd18AGsnBaFL7MPHO/Landing-Page-Kit---Free-13-Landing-Pages-Collection-for-UI-UX-Design--Community-?m=dev)
 
 ## Technologies Used
 - **HTML5** - Semantic structure;
@@ -27,6 +27,3 @@ The layout and prototype that serve as the foundation for this project can be ac
    npm run dev
    ```
 5. Access the local port indicated in the terminal (usually `http://localhost:5173`) to view the application!
-
----
-*Developed with a focus on Componentization, Fidelity, and Mobile-First.*
