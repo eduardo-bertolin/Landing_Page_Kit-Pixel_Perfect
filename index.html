@@ -4,8 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landing Page Kit - Template moderno e profissional para landing pages">
-  <title>Landing Page Kit</title>
+  <meta name="description" content="Search the work of the best artists with Xinder. A professional platform for discovering art, expanding services, and finding the best solutions.">
+  <meta name="keywords" content="art, artists, gallery, xinder, creative, portfolio">
+  <meta name="author" content="Xinder">
+  <meta property="og:title" content="Xinder - Discover Best Artists">
+  <meta property="og:description" content="Search the work of the best artists with Xinder. A professional platform for discovering art.">
+  <meta property="og:type" content="website">
+  <title>Xinder | Search the work of the best artists</title>
+
+  <!-- Preload LCP Images for Performance -->
+  <link rel="preload" href="./src/assets/images/woman.png" as="image">
+  <link rel="preload" href="./src/assets/images/woman-trace.png" as="image">
 
   <!-- Google Fonts - Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +36,7 @@
 
         <!-- Hamburger Menu Button -->
         <button type="button" aria-label="Abrir menu" aria-expanded="false" class="text-white">
-          <img src="./src/assets/icons/menu-scale.svg" alt="Menu icon">
+          <img decoding="async" src="./src/assets/icons/menu-scale.svg" alt="Menu icon">
         </button>
       </nav>
     </div>
@@ -45,7 +54,7 @@
 
             <div class="flex flex-col gap-1 w-full max-w-xl">
               <!-- Container Flex: setamos a altura (h-[3rem] equivalente a 48px) aqui para garantir altura em ambos -->
-              <div class="flex flex-row items-stretch gap-2 h-[3rem] w-full">
+              <form role="search" aria-label="Search artists" class="flex flex-row items-stretch gap-2 h-[3rem] w-full" onsubmit="event.preventDefault()">
 
                 <!-- Campo Field Original (base 14.75rem = 236px, mas estica com flex-auto) -->
                 <div class="form-field flex-auto w-[14.75rem] min-w-0 cursor-text"
@@ -58,17 +67,17 @@
                       fill="currentColor" />
                   </svg>
                   <!-- Input Transparente -->
-                  <input type="text" placeholder="search for artists, work name, or category"
+                  <input type="search" id="search-query" name="search" aria-label="Search query" placeholder="search for artists, work name, or category"
                     class="flex-1 min-w-0 bg-transparent border-none outline-none truncate text-blue-gray-900 placeholder:text-blue-gray-400">
                 </div>
 
                 <!-- Botão Search (w-[6.8125rem] = 109px) -->
-                <button
+                <button type="submit" aria-label="Submit search"
                   class="btn-filled btn-md text-button-md flex-none w-[6.8125rem] bg-rose-700 border-rose-700 hover:bg-rose-800 hover:border-rose-800 ">
                   Search
                 </button>
 
-              </div>
+              </form>
               <!-- Container das Badges com Scroll Horizontal (Bleed Full para indicar rolagem) -->
               <ul id="badges" aria-label="Art categories"
                 class="flex flex-row items-center gap-1 h-3 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
@@ -93,9 +102,9 @@
 
           <!-- Coluna Direita: Imagem da Artista -->
           <div class="relative shrink-0 self-center">
-            <img src="./src/assets/images/woman-trace.png" alt="" aria-hidden="true"
+            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman-trace.png" alt="" aria-hidden="true"
               class="absolute top-[5px] left-[16px] w-[331px] h-[285px]">
-            <img src="./src/assets/images/woman.png" alt="Artist painting" class="relative w-[345px] h-[291px]">
+            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman.png" alt="Artist painting" class="relative w-[345px] h-[291px]">
           </div>
 
         </div>
@@ -109,27 +118,27 @@
       <div class="container flex flex-row flex-wrap gap-y-3 gap-x-4 py-6 justify-center">
 
         <div class="flex flex-row gap-1 items-center">
-          <img src="/src/assets/logos/smart-finder-logo.svg" alt="Smart Finder Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/smart-finder-logo.svg" alt="Smart Finder Brand Logo">
           <span class="text-h6 text-blue-gray-400">SmartFinder</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img src="/src/assets/logos/zoomerr-logo.svg" alt="Zoomer Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/zoomerr-logo.svg" alt="Zoomer Brand Logo">
           <span class="text-h6 text-blue-gray-400">Zoomerr</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img src="/src/assets/logos/shells-logo.svg" alt="Shells Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/shells-logo.svg" alt="Shells Brand Logo">
           <span class="text-h6 text-blue-gray-400 uppercase">Shells</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img src="/src/assets/logos/waves-logo.svg" alt="Waves Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/waves-logo.svg" alt="Waves Brand Logo">
           <span class="text-h6 text-blue-gray-400 uppercase">Waves</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img src="/src/assets/logos/art-venue-logo.svg" alt="Art Venue Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/art-venue-logo.svg" alt="Art Venue Brand Logo">
           <span class="text-h6 text-blue-gray-400">Art Venue</span>
         </div>
 
@@ -148,7 +157,7 @@
           <a href="#"
             class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
             View All Categories
-            <img src="/src/assets/icons/arrow-right.svg" alt="arrow right icon" class="size-" />
+            <img loading="lazy" decoding="async" src="/src/assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
           </a>
         </div>
 
@@ -160,7 +169,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image1.png" alt="Vases Family"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image1.png" alt="Vases Family"
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -175,7 +184,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image2.png" alt="Oil Painting"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image2.png" alt="Oil Painting"
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -190,7 +199,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image3.png" alt="Abstract Painting"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image3.png" alt="Abstract Painting"
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -205,7 +214,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image4.png" alt="Classic Watch"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image4.png" alt="Classic Watch"
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -220,7 +229,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img src="/src/assets/images/card-image5.png" alt="Sculpture White Angel"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image5.png" alt="Sculpture White Angel"
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -244,7 +253,7 @@
           <a href="#"
             class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
             Discover More Masterpieces
-            <img src="/src/assets/icons/arrow-right.svg" alt="arrow right icon" class="size-" />
+            <img loading="lazy" decoding="async" src="/src/assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
           </a>
         </div>
         <ul id="art-categories-carousel" aria-label="Art categories"
@@ -252,9 +261,9 @@
           <!-- CARD 1 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img src="/src/assets/images/flower-decoration.png" alt="Flowers decoration">
+            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration.png" alt="Flowers decoration">
             <div class="flex flex-row p-2 gap-1">
-              <img src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic" class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
                 <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
@@ -268,9 +277,9 @@
           <!-- CARD 2 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img src="/src/assets/images/flower-decoration2.png" alt="Flowers decoration">
+            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration2.png" alt="Flowers decoration">
             <div class="flex flex-row p-2 gap-1">
-              <img src="/src/assets/images/user-thumb2.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb2.png" alt="Woman Profile Pic" class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
                 <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
@@ -284,9 +293,9 @@
           <!-- CARD 3 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img src="/src/assets/images/splash.png" alt="Splash Art">
+            <img loading="lazy" decoding="async" src="/src/assets/images/splash.png" alt="Splash Art">
             <div class="flex flex-row p-2 gap-1">
-              <img src="/src/assets/images/user-thumb3.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb3.png" alt="Woman Profile Pic" class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Splash</h3>
                 <span class="text-body-sm text-blue-gray-600">by Rwanda Melflor</span>
@@ -297,9 +306,9 @@
           <!-- CARD 4 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img src="/src/assets/images/fence-spying.png" alt="Fence Spying">
+            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.png" alt="Fence Spying">
             <div class="flex flex-row p-2 gap-1">
-              <img src="/src/assets/images/user-thumb5.png" alt="Woman Profile Pic" class="h-6 w-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5.png" alt="Woman Profile Pic" class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Fence Spying</h3>
                 <span class="text-body-sm text-blue-gray-600">by Melvina Spring</span>
@@ -321,32 +330,32 @@
         <div class="grid grid-cols-3 lg:grid-cols-6 gap-x-3 gap-y-6 w-full">
 
           <div id="service-card-1" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-1.svg" alt="Trophy Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-1.svg" alt="Trophy Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Nibh viverra</h3>
           </div>
 
           <div id="service-card-2" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-2.svg" alt="Music Note Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-2.svg" alt="Music Note Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Cursus amet</h3>
           </div>
 
           <div id="service-card-3" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-3.svg" alt="TV Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-3.svg" alt="TV Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Ipsum fermentum</h3>
           </div>
 
           <div id="service-card-4" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-4.svg" alt="Decoration Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-4.svg" alt="Decoration Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Quisque euismod</h3>
           </div>
 
           <div id="service-card-5" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-5.svg" alt="Speaker Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-5.svg" alt="Speaker Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Arcu vulputate</h3>
           </div>
 
           <div id="service-card-6" class="flex flex-col gap-2 justify-center items-center">
-            <img src="/src/assets/icons/feature-icon-6.svg" alt="Saved Artwork Icon" class="w-8 h-auto">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/feature-icon-6.svg" alt="Saved Artwork Icon" class="w-8 h-auto">
             <h3 class="text-subtitle-xl text-blue-gray-900 text-center">Cras auctor</h3>
           </div>
         </div>
@@ -357,6 +366,8 @@
       </div>
     </section>
 
+
+
     <section id="best-solutions" class="py-6 bg-blue-gray-600 overflow-hidden">
       <div class="container flex flex-col lg:items-center lg:flex-row justify-center gap-4">
         <!-- Wrapper da Colagem com largura e altura exatas -->
@@ -364,20 +375,20 @@
 
           <!-- Colorful Face -->
           <div class="absolute z-0 top-0 left-0 rounded-[10px] overflow-hidden">
-            <img src="/src/assets/images/colorful-face.png" alt="Colorful Face"
+            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.png" alt="Colorful Face"
               class="object-cover w-[200px] h-[147px]">
           </div>
 
           <!-- Woman Picture (user-thumb6) -->
           <div id="woman-picture"
             class="absolute z-[11] top-[217px] left-[48px] shadow-md rounded-[10px] overflow-hidden">
-            <img src="/src/assets/images/user-thumb6.png" alt="Woman Portrait" class="w-[82px] h-[60px] object-cover">
+            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb6.png" alt="Woman Portrait" class="w-[82px] h-[60px] object-cover">
           </div>
 
           <!-- Man Picture (user-thumb5-2) -->
           <div id="man-picture"
             class="absolute z-[11] top-[67px] left-[275px] shadow-md rounded-[10px] overflow-hidden">
-            <img src="/src/assets/images/user-thumb5-2.png" alt="Man Portrait" class="w-[86px] h-[63px] object-cover">
+            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.png" alt="Man Portrait" class="w-[86px] h-[63px] object-cover">
           </div>
 
           <!-- Screen Desktop -->
@@ -393,10 +404,10 @@
             <div class="relative w-full">
               <div
                 class="absolute z-10 w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-overlay-dark-50 rounded-full">
-                <img src="/src/assets/icons/play-icon.svg" alt="Play Icon"
+                <img loading="lazy" decoding="async" src="/src/assets/icons/play-icon.svg" alt="Play Icon"
                   class="absolute left-[36px] top-1/2 -translate-y-1/2">
               </div>
-              <img src="/src/assets/images/video-image-background.png" alt="Desktop Screen"
+              <img loading="lazy" decoding="async" src="/src/assets/images/video-image-background.png" alt="Desktop Screen"
                 class="block w-full h-[160px] object-cover rounded-b-[20px]">
             </div>
 
@@ -413,26 +424,26 @@
 
           <div class="flex flex-col">
             <div class="flex flex-row gap-1">
-              <img src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
               <span class="text-body-md text-white">
                 Interdum volutpat turpis malesuada ac turpis.
               </span>
             </div>
             <div class="flex flex-row gap-1">
-              <img src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
               <span class="text-body-md text-white">
                 Tortor ipsum pretium quis nunc.
               </span>
             </div>
             <div class="flex flex-row gap-1">
-              <img src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
+              <img loading="lazy" decoding="async" src="/src/assets/icons/verification.svg" alt="Verication Icon" class="w-3 h-auto">
               <span class="text-body-md text-white">
                 Vitae odio a id purus in.
               </span>
             </div>
           </div>
 
-          <a href="" class="btn-lg btn-outline text-white border-white max-w-[201px] max-h-[56px]">Explore Xinder</a>
+          <a href="#" class="btn-lg btn-outline text-white border-white max-w-[201px] max-h-[56px]">Explore Xinder</a>
 
 
         </div>
@@ -440,16 +451,18 @@
 
     </section>
 
+
+
     <section id="co-founder" class="py-6 bg-blue-gray-100">
       <div class="container flex flex-col justify-center gap-4 ">
 
         <div id="youtube-video" class="relative w-[361px] h-[258px] rounded-[10px] overflow-hidden">
           <div
             class="absolute z-10 w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-overlay-dark-50 rounded-full">
-            <img src="/src/assets/icons/play-icon.svg" alt="Play Icon"
+            <img loading="lazy" decoding="async" src="/src/assets/icons/play-icon.svg" alt="Play Icon"
               class="absolute left-[36px] top-1/2 -translate-y-1/2">
           </div>
-          <img src="/src/assets/images/video-thumb.png" alt="Youtube Video Thumbnail"
+          <img loading="lazy" decoding="async" src="/src/assets/images/video-thumb.png" alt="Youtube Video Thumbnail"
             class="w-[361px] h-[258px] object-cover">
 
 
@@ -458,20 +471,342 @@
           <h3 class="text-body-xl text-blue-gray-600">
             Marie Poirot, Co-founder <span class="text-blue-600">Art-Gal</span>
           </h3>
+          <blockquote class="text-body-md text-blue-gray-900">“Id urna, nisl, ut quam. Diam suspendisse fringilla quam arcu
+            mattis est velit in.
+            Nibh in purus sit
+            convallis phasellus ut. Neque suspendisse a habitasse commodo.”
+
+          </blockquote>
         </div>
 
       </div>
 
 
     </section>
+
+
+
+    <section id="be-incredible" class="py-6 bg-blue-gray-600">
+      <div class="container flex flex-col gap-4">
+        <div class="flex flex-col gap-3 h-[248px]">
+          <h3 class="text-h5 text-white">Be incredible</h3>
+          <p class="text-body-md text-white">Nec ultricies eget placerat ultricies eleifend dignissim aliquet sapien.
+            Senectus vestibulum, eget erat at et congue cursus pretium.</p>
+          <a href="#" class="btn-lg btn-outline text-white border-white max-w-[201px] max-h-[56px]">Explore Xinder</a>
+
+        </div>
+
+        <ul id="art-categories-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 py-4 -my-4 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
+          <!-- CARD 1 -->
+          <li
+            class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
+            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.png" alt="Colorful Face">
+
+
+            <div class="flex flex-row p-2 gap-2 items-center">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic" class="h-3 w-auto">
+
+              <h3 class="text-body-md text-blue-gray-900">Colorful Face</h3>
+            </div>
+          </li>
+
+
+          <!-- CARD 2 -->
+          <li
+            class="w-[184px] h-[274px] relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden opacity-25">
+            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.png" alt="Fence Spying Art"
+              class="w-[184px] h-[220px] object-cover">
+
+
+            <div class="flex flex-row p-2 gap-2 items-center">
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.png" alt="Woman Profile Pic" class="h-3 w-3 rounded-full">
+
+              <h3 class="text-body-md text-blue-gray-900">fence Spying</h3>
+            </div>
+          </li>
+
+
+
+        </ul>
+      </div>
+
+    </section>
   </main>
 
+
+
+  <section id="art-events" class="py-6 bg-white">
+    <div class="container flex flex-col gap-3">
+      <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
+        <h3 class="text-h5 text-blue-gray-900">Art Events</h3>
+        <a href="#"
+          class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
+          Explore All Events
+          <img loading="lazy" decoding="async" src="/src/assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
+        </a>
+      </div>
+
+      <ul id="art-categories-carousel" aria-label="Art categories"
+        class="flex flex-row flex-wrap justify-center items-center gap-3 overflow-x-auto scrollbar-hide -mx-2 px-2 lg:-mx-10 lg:px-10">
+        <!-- CARD 1 -->
+        <li class="w-fit relative shrink-0 bg-white overflow-hidden ">
+          <img loading="lazy" decoding="async" src="/src/assets/images/wild-horse-event.png" alt="Cowboy on rearing horse"
+            class="w-[361px] h-[220px] object-cover rounded-[5px]">
+          <div class="flex flex-row pt-3 pb-2 gap-1">
+            <div class="flex flex-col items-start justify-center gap-1">
+              <h3 class="text-h6 text-blue-gray-900">Wild Horse Event</h3>
+              <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
+                habitasse.</span>
+            </div>
+          </div>
+          <div class="absolute z-10 top-2 px-1 py-[2px] left-2 rounded-[4px] bg-purple-100">
+            <span class="text-body-sm text-purple-800">Featured</span>
+          </div>
+        </li>
+
+        <!-- CARD 2 -->
+        <li class="w-fit relative shrink-0 bg-white overflow-hidden ">
+          <img loading="lazy" decoding="async" src="/src/assets/images/great-colors.png" alt="" class="w-[361px] h-[220px] object-cover rounded-[5px]">
+          <div class="flex flex-row pt-3 pb-2 gap-1">
+            <div class="flex flex-col items-start justify-center gap-1">
+              <h3 class="text-h6 text-blue-gray-900">Great Colors</h3>
+              <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
+                habitasse.</span>
+            </div>
+          </div>
+          <div class="absolute z-10 top-2 px-1 py-[2px] left-2 rounded-[4px] bg-green-100">
+            <span class="text-body-sm text-green-800">New</span>
+          </div>
+        </li>
+
+        <!-- CARD 3 -->
+        <li class="w-fit relative shrink-0 bg-white overflow-hidden ">
+          <img loading="lazy" decoding="async" src="/src/assets/images/fathers-day-banner.png" alt="Father's Day banner"
+            class="w-[361px] h-[220px] object-cover rounded-[5px]">
+          <div class="flex flex-row pt-3 pb-2 gap-1">
+            <div class="flex flex-col items-start justify-center gap-1">
+              <h3 class="text-h6 text-blue-gray-900">Happy Father's Day</h3>
+              <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
+                habitasse.</span>
+            </div>
+          </div>
+          <div class="absolute z-10 top-2 px-1 py-[2px] left-2 rounded-[4px] bg-yellow-100">
+            <span class="text-body-sm text-yellow-800">Coming Soon</span>
+          </div>
+        </li>
+
+
+      </ul>
+
+
+
+    </div>
+  </section>
+
+
+
+  <section id="join-now" class="pt-6 bg-blue-gray-900">
+    <div class="container flex flex-col gap-4">
+      <div class="flex flex-col gap-3 items-center">
+        <h3 class="text-h5 text-white text-center">Add more masterpieces to your growing collection</h3>
+        <a href="#" class="btn-lg btn-outline text-white border-white max-w-[182px] max-h-[56px]">Join Now</a>
+      </div>
+
+      <div class="flex items-center w-[321px] h-[280px] mx-auto relative overflow-hidden isolate">
+
+        <img loading="lazy" decoding="async" src="/src/assets/images/man-trace.svg" alt="Artist trace"
+          class="absolute top-0 left-[8px] w-[367px] h-auto z-0">
+
+        <img loading="lazy" decoding="async" src="/src/assets/images/man.png" alt="Artist painting"
+          class="relative top-[52px] w-[321px] h-auto z-10 scale-[1.16]">
+      </div>
+
+    </div>
+  </section>
   <!-- Footer -->
-  <footer>
+  <footer class="py-6 bg-white">
+    <div class="container flex flex-col items-start gap-4">
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/global-icon.svg" alt="Global Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Categories</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class=" text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User
+                Interface</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User
+                Experience</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Digital
+                Media</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Lifestyle</a>
+            </li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Programming</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Animation</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/cloud-icon.svg" alt="Cloud Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Product</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class=" text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Pricing</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Overview</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Browse</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Accessibility</a>
+            </li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Five</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Changelog</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/settings-icon.svg" alt="Settings Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Solutions</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class=" text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Brainstorming</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Ideation</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Wireframing
+                Media</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Research</a>
+            </li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Design</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Concept</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/resources-icon.svg" alt="Resources Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Resources</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Help Center</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Tutorials</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">FAQs</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Community</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/headset-icon.svg" alt="Support Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Support</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Contact Us</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Developers</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Documentation</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Integrations</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Reports</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Webinar</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="flex flex-row items-start w-full">
+        <li class="flex flex-col items-start w-full">
+          <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+            <img loading="lazy" decoding="async" src="/src/assets/icons/company-icon.svg" alt="Company Icon">
+            <span class="text-subtitle-md text-blue-gray-600">Company</span>
+          </div>
+          <ul class="flex flex-col items-start w-full">
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">About</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Press</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Careers</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Customers</a></li>
+            <li class="py-[12px]"><a href="#"
+                class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Partners</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div
+        class="flex flex-col md:flex-row gap-4 pt-4 mt-4 justify-between items-start border-t border-blue-gray-200 w-full">
+        <span class="text-body-md text-blue-gray-600">@ 2023 Xinder, Inc. All rights reserved.</span>
+        <div class="flex flex-row items-start gap-2">
+          <a href="#" aria-label="Youtube" class="hover:opacity-75 transition-opacity"><img
+              src="/src/assets/icons/youtube-icon.svg" alt="Youtube"></a>
+          <a href="#" aria-label="Facebook" class="hover:opacity-75 transition-opacity"><img
+              src="/src/assets/icons/facebook-icon.svg" alt="Facebook"></a>
+          <a href="#" aria-label="Twitter" class="hover:opacity-75 transition-opacity"><img
+              src="/src/assets/icons/twitter-icon.svg" alt="Twitter"></a>
+          <a href="#" aria-label="Instagram" class="hover:opacity-75 transition-opacity"><img
+              src="/src/assets/icons/instagram-icon.svg" alt="Instagram"></a>
+          <a href="#" aria-label="LinkedIn" class="hover:opacity-75 transition-opacity"><img
+              src="/src/assets/icons/linkedin-icon.svg" alt="LinkedIn"></a>
+        </div>
+        <span class="text-body-xs text-blue-gray-600">In sed posuere sed ullamcorper feugiat. Lacinia elit neque, ipsum,
+          non. Tellus mattis enim volutpat
+          habitasse. Semper posuere lectus consectetur aliquam et ullamcorper. Dictumst aenean justo fames diam eget
+          volutpat vestibulum elit. Blandit aliquet bibendum pellentesque turpis id penatibus faucibus id nunc. Aenean
+          rhoncus, erat pellentesque eu. Quis morbi condimentum phasellus in ultricies eu amet.</span>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 
 </html>
