@@ -825,8 +825,7 @@
 /* --- Custom Container --- */
 @utility container {
   width: 100%;
-  max-width: 1280px;
-  /* 7xl */
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   /* Espaçamento mobile (16px) */
@@ -849,4 +848,29 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Previne seleção de texto e arrasto de imagens nos carrosséis durante o touch swipe no mobile */
+.overflow-x-auto,
+.scrollbar-hide {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+}
+
+.overflow-x-auto img,
+.scrollbar-hide img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+.overflow-x-auto a,
+.scrollbar-hide a,
+.overflow-x-auto button,
+.scrollbar-hide button {
+  pointer-events: auto;
 }
