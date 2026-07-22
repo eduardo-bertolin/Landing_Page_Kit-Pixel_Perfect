@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -15,20 +15,27 @@
   <title>Xinder | Search the work of the best artists</title>
 
   <!-- Preload LCP Images for Performance -->
-  <link rel="preload" href="./src/assets/images/woman.png" as="image">
-  <link rel="preload" href="./src/assets/images/woman-trace.png" as="image">
+  <link rel="preload" href="./src/assets/images/woman.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="./src/assets/images/woman-trace.webp" as="image" type="image/webp" fetchpriority="high">
 
-  <!-- Google Fonts - Roboto -->
+  <!-- Google Fonts - Roboto (Optimized & Non-Render Blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+  </noscript>
 
-  <!-- Compiled Tailwind CSS -->
-  <link rel="stylesheet" href="./src/css/styles.css">
+  <!-- Compiled Tailwind CSS (Non-Render Blocking) -->
+  <link rel="preload" as="style" href="./src/css/styles.css">
+  <link rel="stylesheet" href="./src/css/styles.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="./src/css/styles.css">
+  </noscript>
 </head>
 
-<body class="min-h-screen bg-white overflow-x-hidden">
+<body class="min-h-screen bg-white overflow-x-hidden max-w-full">
   <!-- Header -->
   <header class="bg-rose-900">
     <div class="container">
@@ -61,14 +68,14 @@
 
         <!-- Hamburger Menu Button (visible on smaller screens) -->
         <button type="button" aria-label="Abrir menu" aria-expanded="false" class="text-white lg:hidden">
-          <img decoding="async" src="./src/assets/icons/menu-scale.svg" alt="Menu icon">
+          <img decoding="async" src="./src/assets/icons/menu-scale.svg" alt="Menu icon" width="24" height="24">
         </button>
       </nav>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main class="overflow-x-hidden w-full max-w-full">
     <!-- Hero Section -->
     <section id="hero" class="bg-rose-900 pt-[29px] gap-4 -mt-px overflow-hidden">
       <div class="container">
@@ -129,10 +136,10 @@
 
           <!-- Coluna Direita: Imagem da Artista -->
           <div class="relative shrink-0 self-center lg:w-1/2 lg:aspect-[640/539] lg:-mr-10">
-            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman-trace.png" alt=""
+            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman-trace.webp" alt="" width="331" height="285"
               aria-hidden="true"
               class="absolute top-[5px] left-[16px] w-[331px] h-[285px] lg:top-[1.11%] lg:left-[3.91%] lg:w-[96.72%] lg:h-[99%]">
-            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman.png" alt="Artist painting"
+            <img fetchpriority="high" decoding="async" src="./src/assets/images/woman.webp" alt="Artist painting" width="345" height="291"
               class="relative w-[345px] h-[291px] lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full lg:object-cover">
           </div>
         </div>
@@ -146,28 +153,28 @@
       <div class="container flex flex-row flex-wrap gap-y-3 gap-x-4 justify-center lg:gap-10">
 
         <div class="flex flex-row gap-1 items-center">
-          <img loading="lazy" decoding="async" src="/src/assets/logos/smart-finder-logo.svg"
+          <img loading="lazy" decoding="async" src="/src/assets/logos/smart-finder-logo.svg" width="24" height="24"
             alt="Smart Finder Brand Logo">
           <span class="text-h6 text-blue-gray-400">SmartFinder</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img loading="lazy" decoding="async" src="/src/assets/logos/zoomerr-logo.svg" alt="Zoomer Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/zoomerr-logo.svg" width="24" height="24" alt="Zoomer Brand Logo">
           <span class="text-h6 text-blue-gray-400">Zoomerr</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img loading="lazy" decoding="async" src="/src/assets/logos/shells-logo.svg" alt="Shells Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/shells-logo.svg" width="24" height="24" alt="Shells Brand Logo">
           <span class="text-h6 text-blue-gray-400 uppercase">Shells</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img loading="lazy" decoding="async" src="/src/assets/logos/waves-logo.svg" alt="Waves Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/waves-logo.svg" width="24" height="24" alt="Waves Brand Logo">
           <span class="text-h6 text-blue-gray-400 uppercase">Waves</span>
         </div>
 
         <div class="flex flex-row gap-1 items-center">
-          <img loading="lazy" decoding="async" src="/src/assets/logos/art-venue-logo.svg" alt="Art Venue Brand Logo">
+          <img loading="lazy" decoding="async" src="/src/assets/logos/art-venue-logo.svg" width="24" height="24" alt="Art Venue Brand Logo">
           <span class="text-h6 text-blue-gray-400">Art Venue</span>
         </div>
 
@@ -177,7 +184,7 @@
 
 
     <!-- Featured Artworks Section -->
-    <section id="featured-artworks" class="py-6 lg:py-10 bg-white">
+    <section id="featured-artworks" class="py-6 lg:py-10 bg-white overflow-hidden">
       <div class="container flex flex-col gap-4 lg:gap-3">
         <!-- Header da Seção: Coluna no celular, Linha no tablet/desktop -->
         <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
@@ -191,14 +198,14 @@
         </div>
 
         <!-- O Carrossel de Cards entrará aqui -->
-        <ul id="art-categories-carousel" aria-label="Art categories"
-          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none -mx-2 px-2 lg:-mx-10 lg:px-10 after:content-[''] after:w-[1px] after:shrink-0 lg:after:hidden">
+        <ul id="featured-artworks-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none carousel-full-bleed">
 
           <!-- CARD 1 -->
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[237px] min-w-[237px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img loading="lazy" decoding="async" src="/src/assets/images/card-image1.png" alt="Vases Family"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image1.webp" alt=""
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -213,7 +220,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img loading="lazy" decoding="async" src="/src/assets/images/card-image2.png" alt="Oil Painting"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image2.webp" alt=""
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -228,7 +235,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img loading="lazy" decoding="async" src="/src/assets/images/card-image3.png" alt="Abstract Painting"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image3.webp" alt=""
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -243,7 +250,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img loading="lazy" decoding="async" src="/src/assets/images/card-image4.png" alt="Classic Watch"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image4.webp" alt=""
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -258,7 +265,7 @@
           <li
             class="relative shrink-0 border border-blue-gray-200 rounded-[5px] shadow-md overflow-hidden h-[354px] w-[236.8px] min-w-[236.8px]">
             <!-- Imagem preenchendo o card inteiro -->
-            <img loading="lazy" decoding="async" src="/src/assets/images/card-image5.png" alt="Sculpture White Angel"
+            <img loading="lazy" decoding="async" src="/src/assets/images/card-image5.webp" alt=""
               class="absolute inset-0 w-full h-full object-cover">
             <!-- Caixa para o texto ficar por cima da imagem -->
             <div class="relative z-10 flex flex-col gap-0.5 p-3 pb-8 bg-gradient-to-b from-[#0F172A]/50 to-transparent">
@@ -274,7 +281,7 @@
 
 
     <!-- Latest marterpieces -->
-    <section id="masterpieces" class="py-6 lg:py-10 bg-blue-gray-100">
+    <section id="masterpieces" class="py-6 lg:py-10 bg-blue-gray-100 overflow-hidden">
       <div class="container flex flex-col gap-3">
         <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
           <h2 class="text-h5 lg:text-h4 text-blue-gray-900">Latest Masterpieces</h2>
@@ -285,15 +292,15 @@
             <img loading="lazy" decoding="async" src="/src/assets/icons/arrow-right.svg" alt="" aria-hidden="true" />
           </a>
         </div>
-        <ul id="art-categories-carousel" aria-label="Art categories"
-          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none -mx-2 px-2 lg:-mx-10 lg:px-10 after:content-[''] after:w-[1px] after:shrink-0 lg:after:hidden">
+        <ul id="masterpieces-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none carousel-full-bleed">
           <!-- CARD 1 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration.png"
-              alt="Flowers decoration">
+            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration.webp"
+              alt="">
             <div class="flex flex-row p-2 gap-1">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.webp" alt="Woman Profile Pic"
                 class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
@@ -308,10 +315,10 @@
           <!-- CARD 2 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration2.png"
-              alt="Flowers decoration">
+            <img loading="lazy" decoding="async" src="/src/assets/images/flower-decoration2.webp"
+              alt="">
             <div class="flex flex-row p-2 gap-1">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb2.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb2.webp" alt="Woman Profile Pic"
                 class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Flower Decorations</h3>
@@ -326,9 +333,9 @@
           <!-- CARD 3 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/splash.png" alt="Splash Art">
+            <img loading="lazy" decoding="async" src="/src/assets/images/splash.webp" alt="">
             <div class="flex flex-row p-2 gap-1">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb3.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb3.webp" alt="Woman Profile Pic"
                 class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Splash</h3>
@@ -341,9 +348,9 @@
           <!-- CARD 4 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.png" alt="Colorful Face">
+            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.webp" alt="">
             <div class="flex flex-row p-2 gap-1">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb4.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb4.webp" alt="Woman Profile Pic"
                 class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Colorful Face</h3>
@@ -356,9 +363,9 @@
           <!-- CARD 5 -->
           <li
             class="w-[300px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.png" alt="Fence Spying">
+            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.webp" alt="">
             <div class="flex flex-row p-2 gap-1">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5.webp" alt="Woman Profile Pic"
                 class="h-6 w-auto">
               <div class="flex flex-col items-start justify-center">
                 <h3 class="text-body-md text-blue-gray-900">Fence Spying</h3>
@@ -366,16 +373,13 @@
               </div>
             </div>
           </li>
-
-          <!-- CARD 5 -->
-
         </ul>
       </div>
     </section>
 
 
 
-    <section id="expanding-services" class="py-6 lg:py-10 bg-white">
+    <section id="expanding-services" class="py-6 lg:py-10 bg-white overflow-hidden">
       <div class="container flex flex-col gap-6 lg:gap-10 justify-center items-center">
         <h2 class="text-h5 lg:text-h4 text-blue-gray-900">Expanding services</h2>
         <div class="grid grid-cols-3 lg:grid-cols-6 gap-x-3 gap-y-6 lg:gap-6 w-full">
@@ -428,31 +432,31 @@
     <section id="best-solutions" class="py-6 lg:py-10 bg-blue-gray-600 overflow-hidden">
       <div class="container flex flex-col lg:flex-row-reverse lg:items-center lg:justify-between gap-4 lg:gap-10">
         <!-- Wrapper da Colagem com largura e altura exatas -->
-        <div class="relative w-[361px] h-[277px] lg:w-[600px] lg:h-[383px] shrink-0">
+        <div class="relative w-full max-w-[361px] h-[277px] md:w-[480px] md:max-w-none md:h-[330px] lg:w-[600px] lg:h-[383px] shrink-0 mx-auto lg:mx-0">
 
           <!-- Colorful Face -->
-          <div class="absolute z-0 top-0 left-0 rounded-[10px] overflow-hidden lg:w-[300px] lg:h-[200px]">
-            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.png" alt="Colorful Face"
-              class="object-cover w-[200px] h-[147px] lg:w-[300px] lg:h-[200px]">
+          <div class="absolute z-0 top-0 left-0 rounded-[10px] overflow-hidden w-[200px] h-[147px] md:w-[250px] md:h-[170px] lg:w-[300px] lg:h-[200px]">
+            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.webp" alt="Colorful Face"
+              class="object-cover w-[200px] h-[147px] md:w-[250px] md:h-[170px] lg:w-[300px] lg:h-[200px]">
           </div>
 
           <!-- Woman Picture (user-thumb6) -->
           <div id="woman-picture"
-            class="absolute z-[11] top-[217px] left-[48px] lg:top-[278px] lg:left-[95px] lg:w-[143px] lg:h-[105px] shadow-md rounded-[10px] overflow-hidden">
-            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb6.png" alt="Woman Portrait"
-              class="w-[82px] h-[60px] lg:w-[143px] lg:h-[105px] object-cover">
+            class="absolute z-[11] top-[217px] left-[48px] md:top-[245px] md:left-[70px] md:w-[112px] md:h-[82px] lg:top-[278px] lg:left-[95px] lg:w-[143px] lg:h-[105px] shadow-md rounded-[10px] overflow-hidden">
+            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb6.webp" alt="Woman Portrait"
+              class="w-[82px] h-[60px] md:w-[112px] md:h-[82px] lg:w-[143px] lg:h-[105px] object-cover">
           </div>
 
           <!-- Man Picture (user-thumb5-2) -->
           <div id="man-picture"
-            class="absolute z-[11] top-[67px] left-[275px] lg:top-[58px] lg:left-[422px] lg:w-[178px] lg:h-[131px] shadow-md rounded-[10px] overflow-hidden">
-            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.png" alt="Man Portrait"
-              class="w-[86px] h-[63px] lg:w-[178px] lg:h-[131px] object-cover">
+            class="absolute z-[11] top-[67px] left-[275px] md:top-[62px] md:left-[348px] md:w-[132px] md:h-[97px] lg:top-[58px] lg:left-[422px] lg:w-[178px] lg:h-[131px] shadow-md rounded-[10px] overflow-hidden">
+            <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.webp" alt="Man Portrait"
+              class="w-[86px] h-[63px] md:w-[132px] md:h-[97px] lg:w-[178px] lg:h-[131px] object-cover">
           </div>
 
           <!-- Screen Desktop -->
           <div id="screen-desktop"
-            class="flex flex-col w-[316px] h-[201px] lg:w-[486px] lg:h-[309px] rounded-[20px] overflow-hidden absolute top-[46px] left-[22.5px] lg:top-[32px] lg:left-[39px] z-10 border border-blue-gray-300 shadow-xl">
+            class="flex flex-col w-[316px] h-[201px] md:w-[400px] md:h-[255px] md:top-[38px] md:left-[30px] lg:w-[486px] lg:h-[309px] rounded-[20px] overflow-hidden absolute top-[46px] left-[22.5px] lg:top-[32px] lg:left-[39px] z-10 border border-blue-gray-300 shadow-xl">
             <div class="w-full h-[41px] bg-white shrink-0 flex items-center px-4">
               <div class="flex flex-row gap-[5px] items-center">
                 <div class="w-[10px] h-[10px] bg-rose-600 rounded-full"></div>
@@ -466,8 +470,8 @@
                 <img loading="lazy" decoding="async" src="/src/assets/icons/play-icon.svg" alt="Play Icon"
                   class="absolute left-[36px] top-1/2 -translate-y-1/2">
               </div>
-              <img loading="lazy" decoding="async" src="/src/assets/images/video-image-background.png"
-                alt="Desktop Screen" class="block w-full h-[160px] lg:h-[268px] object-cover rounded-b-[20px]">
+              <img loading="lazy" decoding="async" src="/src/assets/images/video-image-background.webp"
+                alt="Desktop Screen" class="block w-full h-[160px] md:h-[214px] lg:h-[268px] object-cover rounded-b-[20px]">
             </div>
 
           </div>
@@ -476,7 +480,7 @@
 
         <div class="flex flex-col gap-3 lg:w-[600px] lg:min-h-[397px] lg:justify-center">
           <div class="flex flex-col gap-3">
-            <h3 class="text-h5 lg:text-h2 text-white">Best Solutions for your demanding collection</h3>
+            <h2 class="text-h5 lg:text-h2 text-white">Best Solutions for your demanding collection</h2>
             <p class="text-body-md lg:text-body-lg text-white">Odio vulputate cras vel lacinia turpis volutpat
               adipiscing.
               Sollicitudin at velit, blandit tempus nunc in..</p>
@@ -516,24 +520,24 @@
 
 
 
-    <section id="co-founder" class="py-6 lg:py-10 bg-blue-gray-100">
+    <section id="co-founder" class="py-6 lg:py-10 bg-blue-gray-100 overflow-hidden">
       <div class="container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-10">
         <div id="youtube-video"
-          class="relative w-[361px] h-[258px] lg:w-[576px] lg:h-[384px] shrink-0 rounded-[10px] overflow-hidden">
+          class="relative w-full max-w-[361px] h-[258px] md:w-[480px] md:max-w-none md:h-[320px] lg:w-[576px] lg:h-[384px] shrink-0 rounded-[10px] overflow-hidden mx-auto lg:mx-0">
           <div
             class="absolute z-10 w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-overlay-dark-50 rounded-full">
             <img loading="lazy" decoding="async" src="/src/assets/icons/play-icon.svg" alt="Play Icon"
               class="absolute left-[36px] top-1/2 -translate-y-1/2">
           </div>
 
-          <img loading="lazy" decoding="async" src="/src/assets/images/video-thumb.png" alt="Youtube Video Thumbnail"
-            class="w-[361px] h-[258px] lg:w-[576px] lg:h-[384px] object-cover">
+          <img loading="lazy" decoding="async" src="/src/assets/images/video-thumb.webp" alt="Youtube Video Thumbnail"
+            class="w-full max-w-[361px] h-[258px] md:w-[480px] md:max-w-none md:h-[320px] lg:w-[576px] lg:h-[384px] object-cover">
         </div>
 
         <div class="flex flex-col gap-2 lg:w-[576px] lg:h-auto lg:justify-center">
-          <h3 class="text-body-xl text-blue-gray-600">
+          <p class="text-body-xl text-blue-gray-600">
             Marie Poirot, Co-founder <span class="text-blue-600">Art-Gal</span>
-          </h3>
+          </p>
           <blockquote class="text-body-md lg:text-body-xxl text-blue-gray-900">“Id urna, nisl, ut quam. Diam suspendisse
             fringilla quam
             arcu
@@ -550,7 +554,7 @@
     <section id="be-incredible" class="py-6 lg:py-10 bg-blue-gray-600 overflow-hidden">
       <div class="container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-10">
         <div class="flex flex-col gap-3 h-[248px] justify-center lg:w-[400px] lg:h-[276px] shrink-0">
-          <h3 class="text-h5 lg:text-h2 text-white">Be incredible</h3>
+          <h2 class="text-h5 lg:text-h2 text-white">Be incredible</h2>
           <p class="text-body-md lg:text-body-lg text-white">Nec ultricies eget placerat ultricies eleifend dignissim
             aliquet sapien.
             Senectus vestibulum, eget erat at et congue cursus pretium.</p>
@@ -558,17 +562,17 @@
 
         </div>
 
-        <ul id="art-categories-carousel" aria-label="Art categories"
-          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none -mx-2 px-2 lg:mx-0 lg:px-0 h-auto lg:w-[800px] lg:h-[276px] shrink-0 after:content-[''] after:w-[1px] after:shrink-0 lg:after:hidden">
+        <ul id="be-incredible-carousel" aria-label="Art categories"
+          class="flex flex-row items-center gap-3 overflow-x-auto scrollbar-hide select-none -mx-2 px-2 lg:mx-0 lg:px-0 h-auto lg:w-auto lg:max-w-[800px] lg:h-[276px] shrink-0 after:content-[''] after:w-[1px] after:shrink-0 lg:after:hidden">
           <!-- CARD 1 -->
           <li
             class="hidden lg:block w-[184px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden opacity-25">
-            <img loading="lazy" decoding="async" src="/src/assets/images/splash.png" alt="Splash"
+            <img loading="lazy" decoding="async" src="/src/assets/images/splash.webp" alt=""
               class="w-[184px] h-[220px] object-cover">
 
 
             <div class="flex flex-row p-2 gap-2 items-center">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb3.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb3.webp" alt="Woman Profile Pic"
                 class="h-3 w-3 rounded-full">
 
               <h3 class="text-body-md text-blue-gray-900">Splash</h3>
@@ -577,12 +581,12 @@
           <!-- CARD 2 -->
           <li
             class="w-[300px] lg:w-[384px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden">
-            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.png" alt="Colorful Face"
+            <img loading="lazy" decoding="async" src="/src/assets/images/colorful-face.webp" alt=""
               class="w-full h-[220px] object-cover">
 
 
             <div class="flex flex-row p-2 gap-2 items-center">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb.webp" alt="Woman Profile Pic"
                 class="h-3 w-auto">
 
               <h3 class="text-body-md text-blue-gray-900">Colorful Face</h3>
@@ -593,12 +597,12 @@
           <!-- CARD 3 -->
           <li
             class="w-[184px] h-auto relative shrink-0 border border-blue-gray-200 bg-white shadow-md rounded-[10px] overflow-hidden opacity-25">
-            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.png" alt="Fence Spying Art"
+            <img loading="lazy" decoding="async" src="/src/assets/images/fence-spying.webp" alt=""
               class="w-[184px] h-[220px] object-cover">
 
 
             <div class="flex flex-row p-2 gap-2 items-center">
-              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.png" alt="Woman Profile Pic"
+              <img loading="lazy" decoding="async" src="/src/assets/images/user-thumb5-2.webp" alt="Woman Profile Pic"
                 class="h-3 w-3 rounded-full">
 
               <h3 class="text-body-md text-blue-gray-900">Fence Spying</h3>
@@ -615,10 +619,10 @@
 
 
 
-    <section id="art-events" class="py-6 lg:py-10 bg-white">
+    <section id="art-events" class="py-6 lg:py-10 bg-white overflow-hidden">
       <div class="container flex flex-col gap-3">
         <div class="flex flex-col gap-1 items-start w-full md:flex-row md:items-center md:justify-between">
-          <h3 class="text-h5 text-blue-gray-900">Art Events</h3>
+          <h2 class="text-h5 text-blue-gray-900">Art Events</h2>
           <a href="#"
             class="inline-flex py-[12px] items-center gap-2 px-0 text-button-md text-blue-600 hover:text-blue-700">
             Explore All Events
@@ -626,14 +630,15 @@
           </a>
         </div>
 
-        <ul id="art-categories-carousel" aria-label="Art categories"
-          class="flex flex-row flex-wrap lg:flex-nowrap justify-center items-center gap-4 lg:gap-3 overflow-x-auto scrollbar-hide select-none -mx-2 px-2 lg:mx-0 lg:px-0 lg:w-[1280px] lg:h-[352px] after:content-[''] after:w-[1px] after:shrink-0 lg:after:hidden">
+        <ul id="art-events-carousel" aria-label="Art categories"
+          class="flex flex-col items-center gap-4 lg:flex-row lg:flex-nowrap lg:justify-between lg:items-center lg:gap-3 w-full max-w-full lg:h-[352px]">
           <!-- CARD 1 -->
-          <li class="w-fit lg:w-[410.67px] lg:h-[352px] relative shrink-0 bg-white overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/wild-horse-event.png"
-              alt="Cowboy on rearing horse" class="w-[361px] lg:w-full h-[220px] object-cover rounded-[5px]">
-            <div class="flex flex-row pt-3 pb-2 gap-1">
-              <div class="flex flex-col items-start justify-center gap-1">
+          <li
+            class="w-full max-w-[361px] lg:w-[410.67px] lg:max-w-none lg:h-[352px] relative shrink-0 bg-white overflow-hidden flex flex-col">
+            <img loading="lazy" decoding="async" src="/src/assets/images/wild-horse-event.webp"
+              alt="Cowboy on rearing horse" class="w-full h-[220px] object-cover rounded-[5px]">
+            <div class="flex flex-row pt-3 pb-2 gap-1 w-full">
+              <div class="flex flex-col items-start justify-center gap-1 w-full">
                 <h3 class="text-h6 text-blue-gray-900">Wild Horse Event</h3>
                 <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
                   habitasse.</span>
@@ -645,11 +650,12 @@
           </li>
 
           <!-- CARD 2 -->
-          <li class="w-fit lg:w-[410.67px] lg:h-[352px] relative shrink-0 bg-white overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/great-colors.png" alt=""
-              class="w-[361px] lg:w-full h-[220px] object-cover rounded-[5px]">
-            <div class="flex flex-row pt-3 pb-2 gap-1">
-              <div class="flex flex-col items-start justify-center gap-1">
+          <li
+            class="w-full max-w-[361px] lg:w-[410.67px] lg:max-w-none lg:h-[352px] relative shrink-0 bg-white overflow-hidden flex flex-col">
+            <img loading="lazy" decoding="async" src="/src/assets/images/great-colors.webp" alt=""
+              class="w-full h-[220px] object-cover rounded-[5px]">
+            <div class="flex flex-row pt-3 pb-2 gap-1 w-full">
+              <div class="flex flex-col items-start justify-center gap-1 w-full">
                 <h3 class="text-h6 text-blue-gray-900">Great Colors</h3>
                 <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
                   habitasse.</span>
@@ -661,11 +667,12 @@
           </li>
 
           <!-- CARD 3 -->
-          <li class="w-fit lg:w-[410.67px] lg:h-[352px] relative shrink-0 bg-white overflow-hidden ">
-            <img loading="lazy" decoding="async" src="/src/assets/images/fathers-day-banner.png"
-              alt="Father's Day banner" class="w-[361px] lg:w-full h-[220px] object-cover rounded-[5px]">
-            <div class="flex flex-row pt-3 pb-2 gap-1">
-              <div class="flex flex-col items-start justify-center gap-1">
+          <li
+            class="w-full max-w-[361px] lg:w-[410.67px] lg:max-w-none lg:h-[352px] relative shrink-0 bg-white overflow-hidden flex flex-col">
+            <img loading="lazy" decoding="async" src="/src/assets/images/fathers-day-banner.webp"
+              alt="Father's Day banner" class="w-full h-[220px] object-cover rounded-[5px]">
+            <div class="flex flex-row pt-3 pb-2 gap-1 w-full">
+              <div class="flex flex-col items-start justify-center gap-1 w-full">
                 <h3 class="text-h6 text-blue-gray-900">Happy Father's Day</h3>
                 <span class="text-body-md text-blue-gray-900">Egestas elit dui scelerisque ut eu purus aliquam vitae
                   habitasse.</span>
@@ -689,187 +696,225 @@
     <section id="join-now" class="pt-6 lg:pt-10 bg-blue-gray-900 overflow-hidden">
       <div class="container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-10">
         <div class="flex flex-col gap-3 items-center lg:items-start lg:w-[670px] lg:h-[480px] lg:justify-center">
-          <h3 class="text-h5 lg:text-h2 text-white text-center lg:text-left">Add more masterpieces to your growing
-            collection</h3>
+          <h2 class="text-h5 lg:text-h2 text-white text-center lg:text-left">Add more masterpieces to your growing
+            collection</h2>
           <a href="#" class="btn-lg btn-outline text-white border-white max-w-[182px] max-h-[56px]">Join Now</a>
         </div>
 
         <div
-          class="flex items-center w-[321px] h-[280px] lg:w-[530px] lg:h-[480px] mx-auto lg:mx-0 relative overflow-hidden isolate shrink-0">
+          class="flex items-center w-full max-w-[321px] h-[280px] lg:w-[530px] lg:max-w-none lg:h-[480px] mx-auto lg:mx-0 relative overflow-hidden isolate shrink-0">
 
           <img loading="lazy" decoding="async" src="/src/assets/images/man-trace.svg" alt="Artist trace"
             class="absolute top-0 lg:top-0 left-[8px] lg:left-[13px] w-[367px] lg:w-[606px] h-auto z-0">
 
-          <img loading="lazy" decoding="async" src="/src/assets/images/man.png" alt="Artist painting"
+          <img loading="lazy" decoding="async" src="/src/assets/images/man.webp" alt="Artist painting"
             class="relative top-[52px] lg:top-[76px] w-[321px] lg:w-[530px] h-auto z-10 scale-[1.16]">
         </div>
 
       </div>
     </section>
+
     <!-- Footer -->
-    <footer class="py-6 bg-white">
+
+    <footer class="py-6 bg-white overflow-hidden">
       <div class="container flex flex-col items-start gap-6">
 
         <!-- 6 Colunas dos Links -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 w-full pt-">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 w-full">
           <!-- Coluna 1: Categories -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/global-icon.svg" alt="Global Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Categories</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User Interface</a>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User
+                    Interface</a>
                 </li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User Experience</a>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">User
+                    Experience</a>
                 </li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Digital Media</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Lifestyle</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Programming</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Animation</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Digital
+                    Media</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Lifestyle</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Programming</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Animation</a>
+                </li>
               </ul>
             </li>
           </ul>
 
           <!-- Coluna 2: Product -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/cloud-icon.svg" alt="Cloud Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Product</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Pricing</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Overview</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Browse</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Accessibility</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Five</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Changelog</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Pricing</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Overview</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Browse</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Accessibility</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Five</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Changelog</a>
+                </li>
               </ul>
             </li>
           </ul>
 
           <!-- Coluna 3: Solutions -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/settings-icon.svg" alt="Settings Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Solutions</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Brainstorming</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Ideation</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Wireframing Media</a>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Brainstorming</a>
                 </li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Research</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Design</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Concept</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Ideation</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Wireframing
+                    Media</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Research</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Design</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Concept</a>
+                </li>
               </ul>
             </li>
           </ul>
 
           <!-- Coluna 4: Resources -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/resources-icon.svg" alt="Resources Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Resources</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Help Center</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Tutorials</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">FAQs</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Community</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Help
+                    Center</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Blog</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Tutorials</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">FAQs</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Community</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a>
+                </li>
               </ul>
             </li>
           </ul>
 
           <!-- Coluna 5: Support -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/headset-icon.svg" alt="Support Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Support</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Contact Us</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Developers</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Documentation</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Integrations</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Reports</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Webinar</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Contact
+                    Us</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Developers</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Documentation</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Integrations</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Reports</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Webinar</a>
+                </li>
               </ul>
             </li>
           </ul>
 
           <!-- Coluna 6: Company -->
-          <ul class="flex flex-col items-start w-full lg:w-[173.33px]">
+          <ul class="flex flex-col items-start w-full">
             <li class="flex flex-col items-start w-full">
-              <div class="flex flex-row items-center gap-1 w-full py-[12px]">
+              <div class="flex flex-row items-center gap-1 w-full h-[48px]">
                 <img loading="lazy" decoding="async" src="/src/assets/icons/company-icon.svg" alt="Company Icon"
                   class="w-3 h-3 shrink-0">
                 <span class="text-subtitle-md text-blue-gray-600">Company</span>
               </div>
               <ul class="flex flex-col items-start w-full">
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">About</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Press</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Careers</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Customers</a></li>
-                <li class="py-[12px]"><a href="#"
-                    class="text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Partners</a></li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">About</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Press</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Events</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Careers</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Customers</a>
+                </li>
+                <li class="w-full flex"><a href="#"
+                    class="flex items-center h-[46px] w-full text-body-md text-blue-gray-600 hover:text-blue-600 transition-colors">Partners</a>
+                </li>
               </ul>
             </li>
           </ul>
         </div>
 
         <!-- Seção Inferior: Copyright + Redes Sociais no topo, Texto em baixo -->
-        <div class="flex flex-col gap-4 pt-4 mt-4 border-t border-blue-gray-200 w-full">
+        <div class="flex flex-col gap-3 lg:gap-6 pt-3 lg:pt-6 border-t border-blue-gray-200 w-full">
           <!-- Linha 1: Copyright e Redes Sociais alinhados à esquerda (justify-start) -->
-          <div class="flex flex-col sm:flex-row justify-start items-start sm:items-center w-full gap-4 lg:gap-6">
+          <div class="flex flex-col sm:flex-row justify-start items-start sm:items-center w-full gap-3 lg:gap-6">
             <span class="text-body-md text-blue-gray-600">@ 2023 Xinder, Inc. All rights reserved.</span>
             <div class="flex flex-row items-center gap-3">
               <a href="#" aria-label="Youtube" class="hover:opacity-75 transition-opacity"><img

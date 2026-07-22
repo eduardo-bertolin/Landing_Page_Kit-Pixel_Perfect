@@ -689,6 +689,12 @@
    ============================================ */
 
 @layer base {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   html {
     font-family: var(--font-roboto);
     -webkit-font-smoothing: antialiased;
@@ -836,6 +842,23 @@
   @media (min-width: 1024px) {
     padding-left: var(--spacing-10);
     padding-right: var(--spacing-10);
+  }
+}
+
+/* --- Full Bleed Carousel --- */
+@utility carousel-full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+
+  @media (min-width: 1024px) {
+    padding-left: max(var(--spacing-10), calc((100vw - 1440px) / 2 + var(--spacing-10)));
+    padding-right: max(var(--spacing-10), calc((100vw - 1440px) / 2 + var(--spacing-10)));
   }
 }
 
